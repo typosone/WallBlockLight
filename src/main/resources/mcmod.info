@@ -1,0 +1,16 @@
+[
+{
+  "modid": "wall_block_light",
+  "name": "Wall Block Light",
+  "description": "Add a block that can be erased or you can generate a wall.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["typosone"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
