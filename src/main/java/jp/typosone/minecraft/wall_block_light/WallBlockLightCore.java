@@ -5,6 +5,8 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.block.Block;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * This class is mod's main class
@@ -36,5 +38,21 @@ public class WallBlockLightCore {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.registerTileEntity();
+    }
+
+    public static class Log {
+        public static Logger logger = LogManager.getLogger("WallBlockGenerator");
+
+        public static void trace(String msg) {
+            logger.trace(msg);
+        }
+
+        public static void i(String msg) {
+            logger.info(msg);
+        }
+
+        public static void w(String msg) {
+            logger.warn(msg);
+        }
     }
 }

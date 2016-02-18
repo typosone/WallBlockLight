@@ -51,7 +51,7 @@ public class GeneratorTileEntity extends TileEntity {
     }
 
     public GeneratorTileEntity setMetadata(int metadata) {
-        worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, 2, metadata);
+        worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, metadata, 2);
         return this;
     }
 }

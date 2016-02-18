@@ -12,7 +12,10 @@ public class CommonProxy {
     }
 
     public void registerBlock() {
-        GameRegistry.registerBlock(WallBlockLightCore.wollWallBlockGenerator = new WoolWallBlockGenerator(), WoolWallBlockGenerator.NAME);
+        GameRegistry.registerBlock(WallBlockLightCore.wollWallBlockGenerator = new WoolWallGenerator(),
+                WoolWallGenerator.NAME);
+        GameRegistry.registerBlock(WallBlockLightCore.woolWallBlock = new WoolWallBlock(),
+                WoolWallBlock.NAME);
     }
 
     public void registerTileEntity() {
