@@ -30,11 +30,11 @@ public class WallBlockLightCore {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        proxy.registerBlock();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
+        proxy.registerTileEntity();
     }
 }
