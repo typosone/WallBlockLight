@@ -29,7 +29,10 @@ public class WallGenerator extends BlockContainer {
     private String otherTextureName;
 
     @SideOnly(Side.CLIENT)
-    private IIcon[] icon = new IIcon[2];
+    private IIcon frontIcon;
+
+    @SideOnly(Side.CLIENT)
+    private IIcon otherIcon;
 
     protected WallGenerator(Block wall, String frontTextureName, String otherTextureName) {
         super(Material.rock);
@@ -111,18 +114,19 @@ public class WallGenerator extends BlockContainer {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister register) {
-        icon[0] = register.registerIcon(otherTextureName);
-        icon[1] = register.registerIcon(frontTextureName);
+        otherIcon = register.registerIcon(otherTextureName);
+        frontIcon = register.registerIcon(frontTextureName);
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta) {
-        return side == 1 ? icon[0] :
-                (side == 0 ? icon[0] :
-                        (meta == 2 && side == 2 ? icon[1] :
-                                (meta == 3 && side == 5 ? icon[1] :
-                                        (meta == 0 && side == 3 ? icon[1] :
-                                                (meta == 1 && side == 4 ? icon[1] : icon[0])))));
+        return side == 1 ? otherIcon :
+                (side == 0 ? otherIcon :
+                        (meta == 2 && side == 2 ? frontIcon :
+                                (meta == 3 && side == 5 ? frontIcon :
+                                        (meta == 0 && side == 3 ? frontIcon :
+                                                (meta == 1 && side == 4 ? frontIcon : otherIcon)))));
     }
 
     protected void generateWall(World world, int x, int y, int z) {
