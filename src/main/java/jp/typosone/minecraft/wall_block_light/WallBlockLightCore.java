@@ -27,7 +27,7 @@ public class WallBlockLightCore {
     public static CommonProxy proxy;
 
 
-    public static Block wollWallBlockGenerator;
+    public static Block woolWallGenerator;
     public static Block woolWallBlock;
 
     @Mod.EventHandler
@@ -43,14 +43,17 @@ public class WallBlockLightCore {
     public static class Log {
         public static Logger logger = LogManager.getLogger("WallBlockGenerator");
 
+        @SuppressWarnings("unused")
         public static void trace(String msg) {
             logger.trace(msg);
         }
 
+        @SuppressWarnings("unused")
         public static void i(String msg) {
             logger.info(msg);
         }
 
+        @SuppressWarnings("unused")
         public static void w(String msg) {
             logger.warn(msg);
         }

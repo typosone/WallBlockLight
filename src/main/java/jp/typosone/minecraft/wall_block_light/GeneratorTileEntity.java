@@ -7,22 +7,22 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 
 /**
- * Created by tsuyoshi on 2016/02/18.
+ * ジェネレータの各種情報を保持する独自TileEntity
  */
 public class GeneratorTileEntity extends TileEntity {
     public static final String ID = "wall_block_light.generator_tile_entity";
-    private int input = 0;
+    private int wallMetadata = 0;
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
-        this.input = compound.getInteger("input");
+        wallMetadata = compound.getInteger("wallMetadata");
     }
 
     @Override
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
-        compound.setInteger("input", input);
+        compound.setInteger("wallMetadata", wallMetadata);
     }
 
     @Override
@@ -37,21 +37,16 @@ public class GeneratorTileEntity extends TileEntity {
         readFromNBT(pkt.func_148857_g());
     }
 
-    public int getInputSide() {
-        return input;
-    }
-
-    public GeneratorTileEntity setInputSide(int side) {
-        input = side;
-        return this;
-    }
-
     public int getMetadata() {
         return worldObj.getBlockMetadata(xCoord, yCoord, zCoord);
     }
 
-    public GeneratorTileEntity setMetadata(int metadata) {
-        worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, metadata, 2);
+    public int getWallMetadata() {
+        return wallMetadata;
+    }
+
+    public GeneratorTileEntity setWallMetadata(int meta) {
+        this.wallMetadata = (meta + 16) & 0x0f;
         return this;
     }
 }

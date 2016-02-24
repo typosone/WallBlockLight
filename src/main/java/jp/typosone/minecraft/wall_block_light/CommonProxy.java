@@ -4,18 +4,21 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.world.World;
 
 /**
- * Created by tsuyoshi on 2016/02/17.
+ * サーバ側の処理を担当するプロキシ
  */
 public class CommonProxy {
+    @SuppressWarnings("unused")
     public World getClientWorld() {
         return null;
     }
 
     public void registerBlock() {
-        GameRegistry.registerBlock(WallBlockLightCore.wollWallBlockGenerator = new WoolWallGenerator(),
-                WoolWallGenerator.NAME);
         GameRegistry.registerBlock(WallBlockLightCore.woolWallBlock = new WoolWallBlock(),
                 WoolWallBlock.NAME);
+        GameRegistry.registerBlock(WallBlockLightCore.woolWallGenerator
+                        = new WallGenerator(
+                        WallBlockLightCore.woolWallBlock, "wall_block_light:wool_wall_block_generator", "wool_colored_white")
+                , "Wool Wall Generator");
     }
 
     public void registerTileEntity() {

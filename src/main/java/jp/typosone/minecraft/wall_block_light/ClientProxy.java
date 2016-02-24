@@ -4,7 +4,7 @@ import cpw.mods.fml.client.FMLClientHandler;
 import net.minecraft.world.World;
 
 /**
- * Created by tsuyoshi on 2016/02/17.
+ * クライアント側の処理を担当するプロキシ。ベースはサーバ側用プロキシ。
  */
 public class ClientProxy extends CommonProxy {
     @Override
