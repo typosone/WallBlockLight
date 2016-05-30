@@ -21,9 +21,6 @@ import java.util.Random;
  * 壁ブロックを生成するジェネレータブロッククラス
  */
 public class WallGenerator extends BlockContainer {
-
-    public static final String NAME = "Wool Wall Block Generator";
-
     private Block wall;
     private String frontTextureName;
     private String otherTextureName;
@@ -34,9 +31,9 @@ public class WallGenerator extends BlockContainer {
     @SideOnly(Side.CLIENT)
     private IIcon otherIcon;
 
-    protected WallGenerator(Block wall, String frontTextureName, String otherTextureName) {
+    protected WallGenerator(Block wall, String name, String frontTextureName, String otherTextureName) {
         super(Material.rock);
-        setBlockName(NAME);
+        setBlockName(name);
         setBlockTextureName(frontTextureName);
         setStepSound(soundTypeMetal);
         setCreativeTab(CreativeTabs.tabRedstone);

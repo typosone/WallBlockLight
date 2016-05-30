@@ -17,8 +17,15 @@ public class CommonProxy {
                 WoolWallBlock.NAME);
         GameRegistry.registerBlock(WallBlockLightCore.woolWallGenerator
                         = new WallGenerator(
-                        WallBlockLightCore.woolWallBlock, "wall_block_light:wool_wall_block_generator", "wool_colored_white")
+                        WallBlockLightCore.woolWallBlock, "Wool Wall Generator",
+                        "wall_block_light:wool_wall_block_generator", "wool_colored_white")
                 , "Wool Wall Generator");
+        GameRegistry.registerBlock(WallBlockLightCore.materialWallBlock = new MaterialWallBlock(), MaterialWallBlock.NAME);
+        GameRegistry.registerBlock(WallBlockLightCore.materialWallGenerator
+                        = new WallGenerator(
+                        WallBlockLightCore.materialWallBlock, "Material Wall Generator",
+                        "wall_block_light:material_wall_block_generator", "stone")
+                , "Material Wall Generator");
     }
 
     public void registerTileEntity() {

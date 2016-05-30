@@ -23,6 +23,11 @@ public class WoolWallBlock extends Block {
     }
 
     @Override
+    public boolean isOpaqueCube() {
+        return super.isOpaqueCube();
+    }
+
+    @Override
     public int getMobilityFlag() {
         return 2; // immobility
     }

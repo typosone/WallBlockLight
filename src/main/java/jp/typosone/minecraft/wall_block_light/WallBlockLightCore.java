@@ -29,6 +29,8 @@ public class WallBlockLightCore {
 
     public static Block woolWallGenerator;
     public static Block woolWallBlock;
+    public static Block materialWallGenerator;
+    public static Block materialWallBlock;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
